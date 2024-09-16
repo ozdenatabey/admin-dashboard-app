@@ -11,7 +11,11 @@ function SidebarMenu() {
       className="bg-transparent/10"
       collapsed={!isCollapsed}
     >
-      <Menu>
+      <Menu
+        menuItemStyles={{
+          button: { ":hover": { background: "rgba(0,0,0,0.1)" } },
+        }}
+      >
         {/* LOGO AND MENU ICON */}
         <MenuItem
           onClick={() => {
@@ -38,7 +42,7 @@ function SidebarMenu() {
         >
           {isCollapsed && (
             <div className="flex justify-between">
-              <h1 className="text-center">ADMIN</h1>
+              <h1 className="text-center">SIDEBAR</h1>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -64,15 +68,16 @@ function SidebarMenu() {
                 alt="user"
                 width={100}
                 height={100}
-                className="rounded-full"
+                className="rounded-full cursor-pointer"
               />
             </div>
             <div className="text-center">
               <h2 className="text-lg font-bold">Özden Atabey</h2>
-              <h3>Manager</h3>
+              <h3 className="text-primary">Manager</h3>
             </div>
           </div>
         )}
+        <MenuItem>Ürünler</MenuItem>
       </Menu>
     </Sidebar>
   );

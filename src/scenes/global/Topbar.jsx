@@ -17,7 +17,7 @@ function Topbar() {
   }
 
   return (
-    <div className="flex justify-between items-center p-2">
+    <div className="flex justify-between p-2">
       {/* SEARCH BAR */}
       <div className="input input-bordered gap-2 flex items-center">
         <input type="text" placeholder="Search" />
