@@ -2,6 +2,22 @@ import { useState } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 
+import {
+  Bars3Icon,
+  XMarkIcon,
+  HomeIcon,
+  UsersIcon,
+  IdentificationIcon,
+  DocumentTextIcon,
+  UserIcon,
+  CalendarDaysIcon,
+  QuestionMarkCircleIcon,
+  ChartBarIcon,
+  ChartPieIcon,
+  PresentationChartLineIcon,
+  GlobeAltIcon,
+} from "@heroicons/react/24/outline";
+
 function SidebarMenu() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
@@ -10,10 +26,13 @@ function SidebarMenu() {
       backgroundColor="transparent"
       className="bg-transparent/10"
       collapsed={!isCollapsed}
+      rootStyles={{ border: "none" }}
     >
       <Menu
         menuItemStyles={{
-          button: { ":hover": { background: "rgba(0,0,0,0.1)" } },
+          button: {
+            ":hover": { background: "none", color: "oklch(var(--p))" },
+          },
         }}
       >
         {/* LOGO AND MENU ICON */}
@@ -21,42 +40,12 @@ function SidebarMenu() {
           onClick={() => {
             setIsCollapsed(!isCollapsed);
           }}
-          icon={
-            !isCollapsed ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            ) : undefined
-          }
+          icon={!isCollapsed ? <Bars3Icon className="size-6" /> : undefined}
         >
           {isCollapsed && (
             <div className="flex justify-between">
               <h1 className="text-center">SIDEBAR</h1>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
+              <XMarkIcon className="size-6" />
             </div>
           )}
         </MenuItem>
@@ -77,7 +66,98 @@ function SidebarMenu() {
             </div>
           </div>
         )}
-        <MenuItem>Ürünler</MenuItem>
+
+        {/* MENU ITEMS */}
+        <div>
+          <MenuItem
+            component={<Link to={"/"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<HomeIcon className="size-6" />}
+          >
+            Dashboard
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/team"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<UsersIcon className="size-6" />}
+          >
+            Manage Team
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/contacts"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<IdentificationIcon className="size-6" />}
+          >
+            Contacts Information
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/invoices"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<DocumentTextIcon className="size-6" />}
+          >
+            Invoices Balances
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/form"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<UserIcon className="size-6" />}
+          >
+            Profile Form
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/calendar"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<CalendarDaysIcon className="size-6" />}
+          >
+            Calendar
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/faq"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<QuestionMarkCircleIcon className="size-6" />}
+          >
+            FAQ Page
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/bar"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<ChartBarIcon className="size-6" />}
+          >
+            Bar Chart
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/pie"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<ChartPieIcon className="size-6" />}
+          >
+            Pie Chart
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/line"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<PresentationChartLineIcon className="size-6" />}
+          >
+            Line Chart
+          </MenuItem>
+          <MenuItem
+            component={<Link to={"/geography"} />}
+            selected={selected}
+            setSelected={setSelected}
+            icon={<GlobeAltIcon className="size-6" />}
+          >
+            Geography Chart
+          </MenuItem>
+        </div>
       </Menu>
     </Sidebar>
   );
