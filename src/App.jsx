@@ -1,18 +1,18 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import Topbar from "./scenes/global/Topbar";
-import SidebarMenu from "./scenes/global/SidebarMenu";
-import Dashboard from "./scenes/dashboard/index";
-// import Team from "./scenes/team";
-// import Invoices from "./scenes/invoices";
-// import Contacts from "./scenes/contacts";
-// import Bar from "./scenes/bar";
-// import Form from "./scenes/form";
-// import Line from "./scenes/line";
-// import Pie from "./scenes/pie";
-// import FAQ from "./scenes/faq";
-// import Geography from "./scenes/geography";
-// import Calendar from "./scenes/calendar";
+import Topbar from "./components/Topbar";
+import SidebarMenu from "./components/SidebarMenu";
+import Dashboard from "./pages/Dashboard";
+import Team from "./pages/Team";
+import Invoices from "./pages/Invoices";
+import Contacts from "./pages/Contacts";
+import Bar from "./pages/Bar";
+import Form from "./pages/Form";
+import Line from "./pages/Line";
+import Pie from "./pages/Pie";
+import FAQ from "./pages/Faq";
+import Geography from "./pages/Geography";
+import Calendar from "./pages/Calendar";
 
 function App() {
   return (
@@ -23,16 +23,16 @@ function App() {
           <Topbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            {/* <Route path="/team" element={<Team />} /> */}
-            {/* <Route path="/invoices" element={<Invoices />} /> */}
-            {/* <Route path="/contacts" element={<Contacts />} /> */}
-            {/* <Route path="/bar" element={<Bar />} /> */}
-            {/* <Route path="/form" element={<Form />} /> */}
-            {/* <Route path="/line" element={<Line />} /> */}
-            {/* <Route path="/pie" element={<Pie />} /> */}
-            {/* <Route path="/faq" element={<FAQ />} /> */}
-            {/* <Route path="/geography" element={<Geography />} /> */}
-            {/* <Route path="/calendar" element={<Calendar />} /> */}
+            <Route path="/team" element={<Team />} />
+            <Route path="/invoices" element={<Invoices />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/bar" element={<Bar />} />
+            <Route path="/form" element={<Form />} />
+            <Route path="/line" element={<Line />} />
+            <Route path="/pie" element={<Pie />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/geography" element={<Geography />} />
+            <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </main>
       </div>

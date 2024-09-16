@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
 function Topbar() {
-  const [theme, setTheme] = useState("lemonade");
+  const dark = "dim";
+  const light = "light";
+  const [theme, setTheme] = useState(light);
   let status;
   const toggleTheme = () => {
-    setTheme(theme === "lemonade" ? "dim" : "lemonade");
+    setTheme(theme === light ? dark : light);
   };
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);

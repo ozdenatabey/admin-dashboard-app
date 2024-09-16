@@ -77,6 +77,7 @@ function SidebarMenu() {
           >
             Dashboard
           </MenuItem>
+          <h2 className="text-sm text-secondary font-semibold pl-4">Data</h2>
           <MenuItem
             component={<Link to={"/team"} />}
             selected={selected}
@@ -101,6 +102,7 @@ function SidebarMenu() {
           >
             Invoices Balances
           </MenuItem>
+          <h2 className="text-sm text-secondary font-semibold pl-4">Pages</h2>
           <MenuItem
             component={<Link to={"/form"} />}
             selected={selected}
@@ -125,6 +127,7 @@ function SidebarMenu() {
           >
             FAQ Page
           </MenuItem>
+          <h2 className="text-sm text-secondary font-semibold pl-4">Charts</h2>
           <MenuItem
             component={<Link to={"/bar"} />}
             selected={selected}
