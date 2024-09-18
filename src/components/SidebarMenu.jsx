@@ -20,7 +20,7 @@ import {
 
 function SidebarMenu() {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  // const [selected, setSelected] = useState("Dashboard");
   return (
     <Sidebar
       backgroundColor="transparent"
@@ -71,8 +71,8 @@ function SidebarMenu() {
         <div>
           <MenuItem
             component={<Link to={"/"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<HomeIcon className="size-6" />}
           >
             Dashboard
@@ -80,24 +80,24 @@ function SidebarMenu() {
           <h2 className="text-sm text-secondary font-semibold pl-4">Data</h2>
           <MenuItem
             component={<Link to={"/team"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<UsersIcon className="size-6" />}
           >
             Manage Team
           </MenuItem>
           <MenuItem
             component={<Link to={"/contacts"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<IdentificationIcon className="size-6" />}
           >
             Contacts Information
           </MenuItem>
           <MenuItem
             component={<Link to={"/invoices"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<DocumentTextIcon className="size-6" />}
           >
             Invoices Balances
@@ -105,24 +105,24 @@ function SidebarMenu() {
           <h2 className="text-sm text-secondary font-semibold pl-4">Pages</h2>
           <MenuItem
             component={<Link to={"/form"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<UserIcon className="size-6" />}
           >
             Profile Form
           </MenuItem>
           <MenuItem
             component={<Link to={"/calendar"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<CalendarDaysIcon className="size-6" />}
           >
             Calendar
           </MenuItem>
           <MenuItem
             component={<Link to={"/faq"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<QuestionMarkCircleIcon className="size-6" />}
           >
             FAQ Page
@@ -130,32 +130,32 @@ function SidebarMenu() {
           <h2 className="text-sm text-secondary font-semibold pl-4">Charts</h2>
           <MenuItem
             component={<Link to={"/bar"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<ChartBarIcon className="size-6" />}
           >
             Bar Chart
           </MenuItem>
           <MenuItem
             component={<Link to={"/pie"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<ChartPieIcon className="size-6" />}
           >
             Pie Chart
           </MenuItem>
           <MenuItem
             component={<Link to={"/line"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<PresentationChartLineIcon className="size-6" />}
           >
             Line Chart
           </MenuItem>
           <MenuItem
             component={<Link to={"/geography"} />}
-            selected={selected}
-            setSelected={setSelected}
+            // selected={selected}
+            // setSelected={setSelected}
             icon={<GlobeAltIcon className="size-6" />}
           >
             Geography Chart

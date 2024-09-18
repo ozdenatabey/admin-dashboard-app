@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
 
-function Topbar() {
+export default function Topbar() {
   const dark = "dim";
   const light = "light";
   const [theme, setTheme] = useState(light);
-  let status;
-  const toggleTheme = () => {
-    setTheme(theme === light ? dark : light);
-  };
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
-
+  const toggleTheme = () => {
+    setTheme(theme === light ? dark : light);
+  };
+  let status = "";
   if (theme === "dim") {
     status = "Dark";
   } else {
     status = "Light";
   }
-
   return (
     <div className="flex justify-between p-2">
       {/* SEARCH BAR */}
@@ -43,7 +41,7 @@ function Topbar() {
       <div className="flex justify-center items-center gap-3">
         {/* darkmode switcher */}
         <div className="flex px-2 py-1 rounded-2xl items-center justify-center gap-2 bg-transparent/10 border border-transparent/30">
-          <p>{status}</p>
+          <p id="themeLabel">{status}</p>
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
@@ -148,5 +146,3 @@ function Topbar() {
     </div>
   );
 }
-
-export default Topbar;
