@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
-
-export default function Topbar() {
-  const dark = "dim";
-  const light = "light";
-  const [theme, setTheme] = useState(light);
+import { useEffect } from "react";
+// eslint-disable-next-line react/prop-types
+export default function Topbar({ onClick, theme }) {
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
-  const toggleTheme = () => {
-    setTheme(theme === light ? dark : light);
-  };
+
   let status = "";
   if (theme === "dim") {
     status = "Dark";
@@ -45,7 +40,7 @@ export default function Topbar() {
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
-              onClick={toggleTheme}
+              onClick={onClick}
               type="checkbox"
               className="theme-controller"
               value="synthwave"

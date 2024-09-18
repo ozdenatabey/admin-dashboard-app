@@ -14,16 +14,26 @@ import FAQ from "./pages/Faq";
 import Geography from "./pages/Geography";
 import Calendar from "./pages/Calendar";
 
+import { useState } from "react";
+
 function App() {
+  const dark = "dim";
+  const light = "light";
+  const [theme, setTheme] = useState(light);
+
+  const toggleTheme = () => {
+    setTheme(theme === light ? dark : light);
+  };
+  console.log(theme);
   return (
     <BrowserRouter>
       <div className="flex relative">
         <SidebarMenu />
         <main className="h-full w-full">
-          <Topbar />
+          <Topbar onClick={toggleTheme} theme={theme} />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/team" element={<Team />} />
+            <Route path="/team" element={<Team theme={theme} />} />
             <Route path="/invoices" element={<Invoices />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/bar" element={<Bar />} />
