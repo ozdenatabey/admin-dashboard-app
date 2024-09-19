@@ -24,7 +24,6 @@ function App() {
   const toggleTheme = () => {
     setTheme(theme === light ? dark : light);
   };
-  console.log(theme);
   return (
     <BrowserRouter>
       <div className="flex relative">
@@ -34,8 +33,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/team" element={<Team theme={theme} />} />
-            <Route path="/invoices" element={<Invoices />} />
-            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/invoices" element={<Invoices theme={theme} />} />
+            <Route path="/contacts" element={<Contacts theme={theme} />} />
             <Route path="/bar" element={<Bar />} />
             <Route path="/form" element={<Form />} />
             <Route path="/line" element={<Line />} />

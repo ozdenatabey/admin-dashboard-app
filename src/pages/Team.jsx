@@ -3,7 +3,6 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { mockDataTeam } from "../data/mockData";
-import { useMemo, useRef, useCallback } from "react";
 
 // eslint-disable-next-line react/prop-types
 function Team({ theme }) {
@@ -16,7 +15,6 @@ function Team({ theme }) {
   } else if (theme === "light") {
     selectedTheme = lightTheme;
   }
-  console.log(selectedTheme);
 
   const managerStyle = {
     backgroundColor: "rgba(255,0,0,0.2)",
@@ -51,46 +49,21 @@ function Team({ theme }) {
     },
   ];
 
-  const selection = useMemo(() => {
-    return { mode: "multiRow" };
-  }, []);
-
   const pagination = true;
   const paginationPageSize = 10;
   const paginationPageSizeSelector = [10, 20, 50, 100];
-
-  const gridRef = useRef();
-  const onFilterTextBoxChanged = useCallback(() => {
-    gridRef.current.api.setGridOption(
-      "quickFilterText",
-      document.getElementById("filter-text-box").value
-    );
-  }, []);
 
   return (
     <div>
       <Headers title={"TEAM"} subtitle={"Managing the team members"} />
       <div className="m-7">
         <div className={selectedTheme} style={{ height: 480 }}>
-          <div className="m-4">
-            <span>Quick Filter:</span>
-            <input
-              className="bg-transparent/10 border border-transparent/30 p-2 ml-2 rounded-md"
-              type="text"
-              id="filter-text-box"
-              placeholder="Filter anything"
-              onInput={onFilterTextBoxChanged}
-            />
-          </div>
           <AgGridReact
-            ref={gridRef}
             rowData={mockDataTeam}
             columnDefs={columns}
             pagination={pagination}
-            suppressExcelExport={true}
             paginationPageSize={paginationPageSize}
             paginationPageSizeSelector={paginationPageSizeSelector}
-            selection={selection}
           />
         </div>
       </div>
