@@ -5,7 +5,16 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Form() {
   const notify = () => {
-    toast("User Created!");
+    toast.success("User Created!", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   const {
