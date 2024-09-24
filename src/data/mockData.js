@@ -470,7 +470,7 @@ export const mockLineData = [
       },
       {
         x: "horse",
-        y: 1,
+        y: 30,
       },
       {
         x: "skateboard",
