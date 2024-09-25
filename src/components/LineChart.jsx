@@ -35,7 +35,7 @@ function LineChart({ isDashboard = false }) {
             },
             text: {
               fontSize: 12,
-              fill: "#bfbfbf",
+              fill: "oklch(var(--bc))",
               outlineWidth: 0,
               outlineColor: "transparent",
             },
@@ -43,7 +43,7 @@ function LineChart({ isDashboard = false }) {
         },
         grid: {
           line: {
-            stroke: "#bfbfbf",
+            stroke: "transparent",
             strokeWidth: 1,
           },
         },
@@ -62,7 +62,7 @@ function LineChart({ isDashboard = false }) {
           tableCellValue: {},
         },
       }}
-      margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+      margin={{ top: 10, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",

@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <div className="flex relative">
         <SidebarMenu />
-        <main className="h-full w-full">
+        <main className="h-4/5 w-full">
           <Topbar onClick={toggleTheme} theme={theme} />
           <Routes>
             <Route path="/" element={<Dashboard />} />
