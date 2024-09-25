@@ -52,7 +52,7 @@ function SidebarMenu() {
           <div className="mb-6">
             <div className="flex justify-center items-center">
               <img
-                src={"src/assets/user-image.jpg"}
+                src={"public/user-image.jpg"}
                 alt="user"
                 width={100}
                 height={100}
