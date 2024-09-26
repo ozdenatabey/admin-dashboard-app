@@ -19,7 +19,7 @@ function Dashboard() {
       <div className="flex justify-between items-end">
         <Headers title={"DASHBOARD"} subtitle={"Welcome to your dashboard"} />
         <button className="btn btn-primary btn-outline ">
-          Download deneme
+          Download Reports
         </button>
       </div>
       {/* MAIN COMPONENTS */}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
+import imgUrl from "../assets/user-image.jpg";
 
 import {
   Bars3Icon,
@@ -52,7 +53,7 @@ function SidebarMenu() {
           <div className="mb-6">
             <div className="flex justify-center items-center">
               <img
-                src={"public/assets/user-image.jpg"}
+                src={imgUrl}
                 alt="user"
                 width={100}
                 height={100}
